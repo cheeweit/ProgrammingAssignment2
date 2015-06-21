@@ -13,7 +13,7 @@ makeCacheMatrix <- function(x = matrix()) {
     get <- function() return(x)
     setmn <- function(mn) m <<- mn
     getmn <- function() return(m)
-    return(list(set = set, get = get, setmn = setmn, getmn = getmn))
+    list(set = set, get = get, setmn = setmn, getmn = getmn)
 }
 
 ## This function computes the inverse of the special
@@ -30,5 +30,5 @@ cacheSolve <- function(x, ...) {
     data <- x$get()
     m <- solve(data, ...)
     x$setmn(m)
-    return(m)
+    m
 }
